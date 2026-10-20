@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10233f"><meta name="description" content="کارگاه آموزشی آفلاین کدیـار SD">
+<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
+<title>CodeYar SD AI Academy</title>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="logo">کد</div><div><strong>CodeYar SD</strong><small>AI Academy · کارگاه برنامه‌نویسی</small></div></div>
+  <div class="header-actions"><span id="netStatus" class="status">در حال بررسی اتصال…</span><button id="installBtn" class="btn ghost" hidden>نصب برنامه</button></div>
+</header>
+<div class="app-shell">
+<aside class="sidebar">
+  <div class="profile"><div class="avatar">SD</div><div><b>کارگاه یادگیری من</b><small>طراح: sahar dinar</small></div></div>
+  <nav id="nav">
+    <button class="nav-item active" data-page="home">🏠 داشبورد</button>
+    <button class="nav-item" data-page="path">🧭 مسیر یادگیری</button>
+    <button class="nav-item" data-page="algorithm">🧠 الگوریتم و فلوچارت</button>
+    <button class="nav-item" data-page="python">🐍 آزمایشگاه Python</button>
+    <button class="nav-item" data-page="oop">🧱 شی‌گرایی Python</button>
+    <button class="nav-item" data-page="web">🌐 HTML / CSS / JS</button>
+    <button class="nav-item" data-page="django">🎯 آکادمی Django</button>
+    <button class="nav-item" data-page="appinventor">📱 App Inventor</button>
+    <button class="nav-item" data-page="ai">✨ هوش مصنوعی و Agent</button>
+    <button class="nav-item" data-page="workflow">🔀 Workflow و Automation</button>
+    <button class="nav-item" data-page="projects">🛠️ پروژه‌های من</button>
+    <button class="nav-item" data-page="quiz">📝 آزمون کوتاه</button>
+  </nav>
+  <div class="sidebar-note"><b>حالت آفلاین</b><p>درس‌ها، نمونه‌ها و پیشرفت روی همین دستگاه ذخیره می‌شوند.</p></div>
+</aside>
+<main id="main" class="main">
+<section class="page active" id="page-home">
+  <div class="hero"><div><span class="eyebrow">کارگاه مجازی برنامه‌نویسی</span><h1>از الگوریتم تا ساخت<br><em>محصول واقعی</em></h1><p>یاد بگیر، تمرین کن، خطاها را پیدا کن و پروژه بساز؛ حتی بدون اینترنت.</p><button class="btn primary" data-goto="path">شروع مسیر یادگیری ←</button></div><div class="hero-art"><div class="orbit">AI</div><div class="code-card"><span>def learn():</span><br>&nbsp;&nbsp;print("می‌توانی!")<br><i>▶ Run your ideas</i></div><div class="float-chip">Python · Django</div></div></div>
+  <div class="section-head"><div><h2>نمای کلی کارگاه</h2><p>پیشرفت روی همین دستگاه ذخیره می‌شود.</p></div><span class="pill">نسخه MVP آفلاین</span></div>
+  <div class="stats"><article class="stat"><span>درس‌های تکمیل‌شده</span><strong id="statLessons">0</strong><small>از مسیر یادگیری</small></article><article class="stat"><span>پروژه‌های ذخیره‌شده</span><strong id="statProjects">0</strong><small>در دستگاه شما</small></article><article class="stat"><span>امتیاز یادگیری</span><strong id="statXp">0 XP</strong><small>با تکمیل درس‌ها</small></article></div>
+  <div class="section-head"><div><h2>ادامه مسیر</h2><p>از پایه شروع کن و مرحله‌به‌مرحله پیش برو.</p></div></div><div id="continueCards" class="course-grid"></div>
+  <div class="notice"><b>درباره این MVP:</b> این نسخه یک وب‌اپ قابل اجرا و قابل نصب به‌صورت PWA است. اجرای کامل Python از طریق موتور مرورگری و اجرای واقعی Django روی سرور، در این نسخه پایه هنوز پیکربندی نشده‌اند؛ بخش Django شامل آموزش و ساختار واقعی فایل‌هاست، نه ادعای اجرای سرور.</div>
+</section>
+<section class="page" id="page-path"><div class="page-title"><span class="eyebrow">LEARNING ROADMAP</span><h1>مسیر یادگیری</h1><p>هر بخش را باز کن، درس بخوان و پیشرفتت را ثبت کن.</p></div><div id="roadmap" class="roadmap"></div></section>
+<section class="page" id="page-algorithm"><div class="page-title"><span class="eyebrow">LOGIC LAB</span><h1>آزمایشگاه الگوریتم و فلوچارت</h1><p>یک الگوریتم ساده را گام‌به‌گام بررسی کن.</p></div><div class="two-col"><article class="panel"><h3>مسئله: میانگین سه عدد</h3><ol><li>سه عدد دریافت کن.</li><li>مجموع آن‌ها را حساب کن.</li><li>مجموع را بر ۳ تقسیم کن.</li><li>میانگین را نمایش بده.</li></ol><div class="flow-vertical"><div>شروع</div><b>↓</b><div>دریافت a, b, c</div><b>↓</b><div>avg = (a+b+c) / 3</div><b>↓</b><div>نمایش avg</div><b>↓</b><div>پایان</div></div><button class="btn primary" id="runFlow">اجرای مرحله‌ای</button><p id="flowOutput" class="output" aria-live="polite">برای دیدن مراحل، روی اجرا بزن.</p></article><article class="panel"><h3>تمرین الگوریتم</h3><p>کدام مرحله باید پیش از نمایش میانگین انجام شود؟</p><div class="choice-list" id="algoChoices"><button data-correct="false">پایان برنامه</button><button data-correct="true">محاسبه مجموع و تقسیم بر ۳</button><button data-correct="false">حذف ورودی‌ها</button></div><p id="algoFeedback" aria-live="polite"></p><h3>شبه‌کد</h3><pre>شروع
+دریافت a, b, c
+avg ← (a + b + c) / 3
+نمایش avg
+پایان</pre></article></div></section>
+<section class="page" id="page-python"><div class="page-title"><span class="eyebrow">PYTHON LAB</span><h1>آزمایشگاه Python</h1><p>کد Python را بنویس. اجرای واقعی با Pyodide در مرورگر و با دریافت اولیه از اینترنت در دسترس است؛ اجرای آموزشی محدود نیز برای حالت آفلاین باقی مانده است.</p></div><div class="panel"><div class="editor-head"><b>main.py</b><div><button class="btn small ghost" id="samplePython">بارگذاری نمونه</button><button class="btn small primary" id="runPython">اجرای آموزشی محدود</button><button class="btn small primary" id="runPythonReal">اجرای واقعی Python</button><button class="btn small ghost" id="savePython">ذخیره کد</button></div></div><textarea id="pythonCode" dir="ltr" spellcheck="false">name = input("نام شما: ")
+print("سلام", name)</textarea><h4>ورودی آزمایشی</h4><input id="pythonInput" value="دانش‌آموز" aria-label="ورودی برنامه"><h4>خروجی</h4><pre id="pythonOutput" class="console">خروجی اینجا نمایش داده می‌شود.</pre><p class="muted">اجرای واقعی با Pyodide در مرورگر انجام می‌شود و برای بارگیری اولیه به اینترنت نیاز دارد. اجرای کد ناشناخته را با احتیاط انجام بده. برای اجرای واقعی Python باید Pyodide یا محیط ایزوله سرور اضافه شود.</p></div><div class="lesson-strip"><h3>درس پیشنهادی: متغیر و خروجی</h3><p>متغیر نامی برای نگهداری مقدار است. تابع <code>print()</code> مقدار را نمایش می‌دهد.</p><pre dir="ltr">student = "Sara"
+score = 18
+print(student, score)</pre><button class="btn primary" data-complete="python-basics">علامت‌گذاری درس به‌عنوان تکمیل‌شده</button></div></section>
+<section class="page" id="page-oop"><div class="page-title"><span class="eyebrow">OBJECT ORIENTED PYTHON</span><h1>شی‌گرایی در Python</h1><p>کلاس، شیء، ویژگی و متد را با مثال یاد بگیر.</p></div><div class="two-col"><article class="panel"><h3>مفهوم کلاس و شیء</h3><p>کلاس، الگوی ساخت اشیاست. هر شیء می‌تواند ویژگی و رفتار داشته باشد.</p><pre dir="ltr">class Student:
+    def __init__(self, name, grade):
+        self.name = name
+        self.grade = grade
+
+    def introduce(self):
+        return f"{self.name}: {self.grade}"
+
+student = Student("Sara", 19)
+print(student.introduce())</pre><button class="btn primary" data-complete="oop-class">تکمیل درس</button></article><article class="panel"><h3>نقشه موضوعات</h3><div class="tag-cloud"><span>Class</span><span>Object</span><span>__init__</span><span>self</span><span>Encapsulation</span><span>Inheritance</span><span>Polymorphism</span><span>Composition</span><span>Dataclasses</span></div><p>پروژه تمرینی: سامانه مدیریت دانش‌آموز با کلاس Student و متدهای معرفی و تغییر نمره.</p></article></div></section>
+<section class="page" id="page-web"><div class="page-title"><span class="eyebrow">WEB DEVELOPMENT</span><h1>HTML، CSS، JavaScript و Bootstrap</h1><p>ساخت رابط کاربری واکنش‌گرا و تعاملی.</p></div><div id="webLessons" class="course-grid"></div><div class="panel"><h3>نمونه HTML</h3><pre dir="ltr">&lt;h1&gt;Hello CodeYar&lt;/h1&gt;
+&lt;button id="hello"&gt;Click me&lt;/button&gt;
+&lt;script&gt;
+document.querySelector("#hello").onclick = () =&gt; alert("سلام!");
+&lt;/script&gt;</pre><button class="btn primary" data-complete="web-html">تکمیل درس HTML</button></div></section>
+<section class="page" id="page-django"><div class="page-title"><span class="eyebrow">REAL DJANGO LEARNING</span><h1>آکادمی Django</h1><p>ساختار واقعی پروژه، ارتباط فایل‌ها، مدل‌ها، migration و CRUD.</p></div><div class="notice"><b>شفافیت فنی:</b> این MVP آموزش Django و نمونه فایل‌های واقعی را نمایش می‌دهد. اجرای سرور Django به Python، وابستگی‌ها و محیط سرور ایزوله نیاز دارد و در این فایل استاتیک اجرا نمی‌شود.</div><div class="file-tabs" id="djangoFiles"></div><article class="panel"><div class="editor-head"><h3 id="djangoFileTitle">models.py</h3><button class="btn small ghost" id="copyDjango">کپی کد</button></div><pre id="djangoCode" dir="ltr"></pre><p id="djangoExplain" class="muted"></p></article><div class="lesson-strip"><h3>چرخه Migration</h3><div class="pipeline"><span>models.py</span><b>→</b><span>makemigrations</span><b>→</b><span>migration file</span><b>→</b><span>migrate</span><b>→</b><span>Database</span></div><pre dir="ltr">python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver</pre></div><div class="course-grid" id="djangoTopics"></div></section>
+<section class="page" id="page-appinventor"><div class="page-title"><span class="eyebrow">APP INVENTOR ACADEMY</span><h1>آکادمی App Inventor</h1><p>یادگیری Designer، Components و Blocks با پروژه‌های کوچک.</p></div><div id="appProjects" class="course-grid"></div></section>
+<section class="page" id="page-ai"><div class="page-title"><span class="eyebrow">AI + AGENTS</span><h1>هوش مصنوعی و عامل‌ها</h1><p>آشنایی با AI، پرامپت‌نویسی و طراحی عامل‌های آموزشی.</p></div><div class="two-col"><article class="panel"><h3>طراح Agent</h3><label>نام عامل<input id="agentName" value="معلم برنامه‌نویسی"></label><label>هدف<textarea id="agentGoal">کمک به دانش‌آموز برای فهم خطاهای Python و یادگیری مرحله‌ای</textarea></label><label>ابزارها<select id="agentTools" multiple><option>Python Debugger</option><option>Django Helper</option><option>Quiz Generator</option><option>Flowchart Analyzer</option></select></label><button class="btn primary" id="saveAgent">ذخیره طرح Agent</button><p id="agentStatus" aria-live="polite"></p></article><article class="panel"><h3>معلم آفلاین CodeYar</h3><p>پرسش آموزشی خود را وارد کن. پاسخ‌ها از دانش‌نامه محلی این نسخه هستند.</p><input id="teacherQuestion" placeholder="مثلاً مدل در Django چیست؟"><button class="btn primary" id="askTeacher">پرسیدن</button><div id="teacherAnswer" class="answer-box">پاسخ آموزشی اینجا نمایش داده می‌شود.</div></article></div></section>
+<section class="page" id="page-workflow"><div class="page-title"><span class="eyebrow">WORKFLOW DESIGNER</span><h1>Workflow و Automation</h1><p>مراحل یک فرایند را مرتب کن و طرح را روی دستگاه ذخیره کن.</p></div><div class="panel"><label>نام فرایند<input id="workflowName" value="سامانه تکالیف مدرسه"></label><div class="workflow-steps" id="workflowSteps"><div draggable="true">۱. ثبت تکلیف</div><div draggable="true">۲. ذخیره در پایگاه داده</div><div draggable="true">۳. تحلیل توسط Agent</div><div draggable="true">۴. اطلاع به معلم</div></div><p class="muted">برای جابه‌جایی، مراحل را با ماوس یا لمس طولانی بکش (در مرورگرهای پشتیبان).</p><button class="btn primary" id="saveWorkflow">ذخیره Workflow</button><button class="btn ghost" id="resetWorkflow">بازنشانی نمونه</button><p id="workflowStatus" aria-live="polite"></p></div></section>
+<section class="page" id="page-projects"><div class="page-title"><span class="eyebrow">MY PROJECTS</span><h1>پروژه‌های من</h1><p>ایده‌ها و پروژه‌ها روی همین دستگاه ذخیره می‌شوند.</p></div><div class="panel"><label>عنوان پروژه<input id="projectTitle" placeholder="مثلاً مدیریت تکالیف مدرسه"></label><label>توضیحات<textarea id="projectDescription" placeholder="هدف، امکانات و فناوری‌های موردنیاز"></textarea></label><button class="btn primary" id="addProject">ذخیره پروژه</button></div><div id="projectList" class="project-list"></div></section>
+<section class="page" id="page-quiz"><div class="page-title"><span class="eyebrow">QUICK QUIZ</span><h1>آزمون کوتاه</h1><p>یک سؤال برای مرور مفاهیم.</p></div><article class="panel quiz-panel"><h3>در Django، وظیفه اصلی models.py چیست؟</h3><div class="choice-list" id="djangoQuiz"><button data-correct="false">تعریف رنگ‌های CSS</button><button data-correct="true">تعریف مدل‌های داده و ساختار پایگاه داده</button><button data-correct="false">نمایش مستقیم فایل‌های تصویری</button></div><p id="quizFeedback" aria-live="polite"></p></article></section>
+<footer>CodeYar SD AI Academy · طراح: sahar dinar · نسخه MVP</footer>
+</main></div>
+<script src="app.js"></script>
+</body></html>
